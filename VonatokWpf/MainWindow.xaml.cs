@@ -48,6 +48,15 @@ namespace VonatokWpf
             if (cbxvonalszam.SelectedItem!=null)
             {
                 List<Varakozas>eredmeny=varakozasok.Where(x=>x.Vonal==cbxvonalszam.SelectedItem.ToString()).ToList();
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.FileName = cbxvonalszam.SelectedItem.ToString()+".txt";
+                saveFileDialog.DefaultExt = ".txt";
+                saveFileDialog.Filter = "Text document (.txt)|*.txt";
+                if (saveFileDialog.ShowDialog() == true)
+                {
+                    StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
+                }
+
             }
             else
             {
