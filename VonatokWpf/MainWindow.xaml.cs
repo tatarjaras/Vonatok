@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace VonatokWpf
 {
@@ -44,7 +45,11 @@ namespace VonatokWpf
 
         private void btnMentés_Click(object sender, RoutedEventArgs e)
         {
-            if (cbxvonalszam.Text=="")
+            if (cbxvonalszam.SelectedItem!=null)
+            {
+                List<Varakozas>eredmeny=varakozasok.Where(x=>x.Vonal==cbxvonalszam.SelectedItem.ToString()).ToList();
+            }
+            else
             {
                 MessageBox.Show("Nincs kiválasztott vonal!");
             }
