@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Vonatok
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Varakozas> vonatok=new List<Varakozas>();
+
+            StreamReader beolvas = new StreamReader("varakozas.txt");
+            
+            
+        }
+    }
+}
