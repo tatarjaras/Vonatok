@@ -55,7 +55,13 @@ namespace VonatokWpf
                 if (saveFileDialog.ShowDialog() == true)
                 {
                     StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
+                    foreach (Varakozas v in eredmeny)
+                    {
+                        sw.WriteLine($"{v.Allomas} állomáson {v.Indulo} felé vár a(z) {v.Erkezo} felöl érkező vonatra.");
+                    }
+                    sw.Close();
                 }
+                
 
             }
             else
