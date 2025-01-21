@@ -14,7 +14,7 @@
         <StackPanel>
             <Label Content="Vonalszám"/>
             <ComboBox Name="cbxvonalszam" SelectionChanged="cbxvonalszam_SelectionChanged"/>
-            <Button Content="Mentés" Name="tbxMentés" Click="tbxMentés_Click"/>
+            <Button Content="Mentés" Name="btnMentés" Click="btnMentés_Click"/>
         </StackPanel>
         <TextBlock x:Name="tbkadatok" Grid.Column="1" Text="Kérem, válasszon egy vonalszámot"/>
     </Grid>

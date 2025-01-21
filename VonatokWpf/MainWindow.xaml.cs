@@ -42,7 +42,7 @@ namespace VonatokWpf
 
 
 
-        private void tbxMentés_Click(object sender, RoutedEventArgs e)
+        private void btnMentés_Click(object sender, RoutedEventArgs e)
         {
             if (cbxvonalszam.Text=="")
             {
@@ -52,7 +52,11 @@ namespace VonatokWpf
 
         private void cbxvonalszam_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            tbkadatok.Text=cbxvonalszam.Text;
+            if (cbxvonalszam.SelectedItem!=null)
+            {
+                string vonal=cbxvonalszam.SelectedItem.ToString();
+                tbkadatok.Text = string.Join("\n", varakozasok.Where(x => x.Vonal == vonal));
+            }
         }
     }
 }
